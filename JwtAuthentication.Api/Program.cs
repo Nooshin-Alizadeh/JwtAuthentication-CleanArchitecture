@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 //using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi;
+using Scalar.AspNetCore;
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -142,6 +143,7 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();
