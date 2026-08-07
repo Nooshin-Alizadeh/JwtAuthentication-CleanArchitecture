@@ -26,3 +26,35 @@
 ## API Endpoints
 
 ## Future Improvements
+
+
+
+
+
+                    Angular
+                       │
+                       │ HTTP
+                       ▼
+              ┌─────────────────┐
+              │       API       │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   Application   │
+              └────────┬────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │     Domain      │
+              └─────────────────┘
+                       ▲
+                       │
+              ┌────────┴────────┐
+              │  Infrastructure │
+              │                 │
+              │ EF Core         │
+              │ Identity        │
+              │ SQL Server      │
+              │ JWT             │
+              └─────────────────┘
