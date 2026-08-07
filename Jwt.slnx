@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="JwtAuthentication.Api/JwtAuthentication.Api.csproj" />
+  <Project Path="JwtAuthentication.Application/JwtAuthentication.Application.csproj" />
+  <Project Path="JwtAuthentication.Domain/JwtAuthentication.Domain.csproj" />
+  <Project Path="JwtAuthentication.Infrastructure/JwtAuthentication.Infrastructure.csproj" />
+</Solution>

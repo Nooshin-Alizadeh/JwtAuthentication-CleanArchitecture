@@ -1,0 +1,67 @@
+﻿ Add-Migration InitialCreate -Project JwtAuthentication.Infrastructure -StartupProject JwtAuthentication.Api
+
+ Update-Database -Project JwtAuthentication.Infrastructure -StartupProject JwtAuthentication.Api
+
+
+JwtAuthentication.sln
+
+┌─────────────────────────────────────────────┐
+│                    API                      │
+│                                             │
+│ Controllers / HTTP / JWT configuration      │
+└──────────────────────┬──────────────────────┘
+                       │
+                       ↓
+┌─────────────────────────────────────────────┐
+│               APPLICATION                   │
+│                                             │
+│ Use Cases                                    │
+│ DTOs                                         │
+│ Interfaces                                   │
+│ Business application logic                   │
+└──────────────────────┬──────────────────────┘
+                       │
+                       ↓
+┌─────────────────────────────────────────────┐
+│                  DOMAIN                     │
+│                                             │
+│ Entities                                    │
+│ Value Objects                               │
+│ Domain Rules                                │
+│                                             │
+│        ← NO EF / JWT / SQL SERVER           │
+└─────────────────────────────────────────────┘
+
+
+┌─────────────────────────────────────────────┐
+│              INFRASTRUCTURE                 │
+│                                             │
+│ EF Core                                     │
+│ SQL Server                                  │
+│ ASP.NET Identity                            │
+│ JWT implementation                           │
+│ Repositories                                │
+└─────────────────────────────────────────────┘
+
+
+📦 Api
+ |
+ |  Program.cs
+ |  Controllers
+ |
+ ↓
+
+
+📦 Infrastructure
+ |
+ |  ApplicationDbContext
+ |  EF Core
+ |  SQL Server
+ |
+ ↓
+
+
+📦 Domain
+ |
+ | User Entity
+ |
