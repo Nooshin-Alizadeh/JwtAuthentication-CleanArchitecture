@@ -1,4 +1,7 @@
 ﻿using JwtAuthentication.Domain.Entities;
+using JwtAuthentication.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,27 +9,13 @@ using System.Text;
 
 namespace JwtAuthentication.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : DbContext//DbContext is EF Core's bridge
+
+    public class ApplicationDbContext: IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
-        /*
-         C# Objects
-      |
-      |
-      ↓
-Entity Framework Core
-      |
-      |
-      ↓
-SQL Server Tables
-         */
         public ApplicationDbContext(
-       DbContextOptions<ApplicationDbContext> options)
-       : base(options)
+            DbContextOptions<ApplicationDbContext> options)
+            : base(options)
         {
-
         }
-
-
-        public DbSet<User> Users { get; set; }
     }
 }
