@@ -7,11 +7,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Json;
 using Microsoft.Extensions.Configuration.EnvironmentVariables;
 
-namespace JwtAuthentication.Infrastructure.Persistence
+namespace JwtAuthentication.Infrastructure.Persistence 
 {
+    /// <summary>
+    /// Add-Migration InitialCreateIdentityGemini -Project JwtAuthentication.Infrastructure -StartupProject JwtAuthentication.Api -Context ApplicationDbContext_G
+    /// Update-Database  -Project JwtAuthentication.Infrastructure -StartupProject JwtAuthentication.Api -Context ApplicationDbContext_G    
+    ///  </summary>
     // Design-time factory to allow EF tools to create ApplicationDbContext_G
     public class ApplicationDbContextGFactory : IDesignTimeDbContextFactory<ApplicationDbContext_G>
     {
+        //todo : add it with ai - need to check it more -- error of mugration
         public ApplicationDbContext_G CreateDbContext(string[] args)
         {
             // Try to locate the API project's appsettings.json (startup project) which usually lives next to this project
