@@ -44,7 +44,7 @@ namespace JwtAuthentication.Infrastructure.Authentication
 
         public JwtTokenGenerator(IConfiguration config) => _config = config;
 
-        public string BaseGenerateToken(ApplicationUser user)
+        public string GenerateToken(ApplicationUser user)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtSettings:Secret"]!));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -68,12 +68,6 @@ namespace JwtAuthentication.Infrastructure.Authentication
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public string GenerateToken(Application.DTOs.ApplicationUserDto user)
-        {
 
-            var appUser = ApplicationUser.Create(user.Email, user.FirstName, user.LastName);
-
-            return BaseGenerateToken(appUser);
-        }
     }
 }
